@@ -1,16 +1,21 @@
+/***********
+/* UTILS */
+@import "utils/variables";
+@import "utils/mixins";
+@import "utils/functions";
+// @import "utils/transitions";
+// @import "utils/animations";
+
 /**************
 /* COMPONENTS */
-
-
-
-/**************
-/* FONTS */
+@import "components/pa-button";
 
 
 /**************
 /* PAGES */
-
+@import "pages/home";
 
 /**************
 /* VENDORS */
-@import "vendors/element-ui/index";
+// @import "vendors/element-ui/index";
+

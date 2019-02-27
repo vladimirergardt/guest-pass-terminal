@@ -1,0 +1,306 @@
+.pa-button {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: 36px;
+    margin: 0;
+    padding: 0 in-rem($padding-btn-hz);
+    background: #ffffff;
+    border: 1px solid #ffffff;
+    color: inherit;
+    text-align: center;
+    @include font-size-rem($base-fsz);
+    line-height: 1;
+    border-radius: $border-radius-big;
+    font-weight: 400;
+    box-sizing: border-box;
+    outline: none;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: .2s ease;
+    font-family: "Roboto-Regular", sans-serif;
+
+    @include respond-to('mobile') {
+        height: 30px;
+        @include font-size-rem($base-fsz);
+    }
+
+    & + & {
+        margin-left: 30px;
+    }
+
+    &.is-disabled {
+        cursor: not-allowed;
+    }
+
+    &.is-selected {
+        box-shadow: $shadow-inner;
+    }
+
+    &--default {
+        background-color: $btn-default-color;
+        border-color: $tip-color;
+        color: $text-color-1;
+
+        //&:hover {
+        //    background-color: #f8f9f8;
+        //    border-color: $tip-color;
+        //}
+
+        &:active {
+            background-color: #d5e0dc;
+            border-color: $tip-color;
+        }
+
+        &:focus {  }
+
+        &.is-disabled {
+            color: $btn-disabled-color;
+        }
+
+        &.is-loading {
+            background-color: $btn-default-color;
+            border-color: $tip-color;
+        }
+    }
+
+    &--primary {
+        background-color: $btn-primary-color;
+        border-color: $btn-primary-color;
+        color: $text-color-2;
+
+        //&:hover {
+        //    background-color: $btn-primary-hover-color;
+        //    border-color: $btn-primary-hover-color;
+        //}
+
+        &:active {
+            background-color: $btn-primary-active-color;
+            border-color: $btn-primary-active-color;
+        }
+
+        &:focus {}
+
+        &.is-disabled {
+            background-color: $btn-disabled-color;
+            border-color: $btn-disabled-color;
+        }
+
+        &.is-loading {
+            background-color: $btn-primary-color;
+            border-color: $btn-primary-color;
+        }
+    }
+
+    &--accent {
+        background-color: $btn-accent-color;
+        border-color: $btn-accent-color;
+        color: $text-color-2;
+
+        //&:hover {
+        //    background-color: $btn-accent-hover-color;
+        //    border-color: $btn-accent-hover-color;
+        //}
+
+        &:active {
+            background-color: $btn-accent-active-color;
+            border-color: $btn-accent-active-color;
+        }
+
+        &.is-disabled {
+            background-color: $btn-disabled-color;
+            border-color: $btn-disabled-color;
+        }
+
+        &.is-loading {
+            background-color: $btn-accent-color;
+            border-color: $btn-accent-color;
+        }
+    }
+
+    &--text {
+        border: none;
+        color: $btn-text-color;
+        background: transparent;
+        padding-left: 0;
+        padding-right: 0;
+
+        &:hover {
+            color: $btn-text-hover-color;
+        }
+
+        &:active {
+            color: $btn-text-active-color;
+        }
+
+        &:focus {}
+
+        &.is-disabled {
+            color: $btn-disabled-color;
+        }
+    }
+
+    &--link {
+        height: auto;
+        padding: 0;
+        border: none;
+        background: transparent;
+        color: $--link-color;
+
+        &:hover {
+            color: $--link-color-hover;
+        }
+
+        &:active {
+            color: $--link-color-active;
+        }
+
+        &.is-disabled {
+            color: $btn-disabled-color;
+        }
+    }
+
+    &--small {
+        padding: 5px;
+    }
+
+    &--big {
+        height: 52px;
+    }
+
+    &.is-loading {
+        color: transparent;
+        cursor: wait;
+
+        &:hover, &:active {
+            color: transparent;
+        }
+    }
+
+    &--stretch {
+        width: 100%;
+    }
+
+    &--line-wrap {
+        white-space: normal;
+    }
+
+    &__content {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+    }
+}
+
+.pa-button-group {
+    display: flex;
+
+    .pa-button {
+        // margin-right: -1px;
+
+        & + .pa-button {
+            margin-left: 0;
+        }
+
+        &:first-child {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+
+        &:last-child {
+            border-left-color: #d8dce5;
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+
+        &:not(:last-child) {
+            margin-right: -1px;
+        }
+
+        &:not(:first-child):not(:last-child) {
+            border-left-color: #d8dce5;
+            border-right-color: #d8dce5;
+            border-radius: 0;
+        }
+    }
+}
+
+.pa-button-fat {
+    display: block;
+    width: 100%;
+    height: in-rem(100px);
+    border-radius: 10px;
+    box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.3);
+
+    &__content {
+        display: inline-flex;
+        align-items: center;
+    }
+
+    &__icon-wrap {
+        width: in-rem(100px);
+    }
+
+    &__text {
+        @include font-size-rem($title-fsz-5);
+        @include line-height-em($title-lh-5, $title-fsz-5);
+        text-align: left;
+        white-space: normal;
+    }
+}
+
+// button loading
+$animation-speed: 1000ms;
+$dot-size: 8px;
+
+@mixin animation-dot($delay: 0ms) {
+    animation: fx $animation-speed ease infinite $delay;
+}
+
+// cascade inherit color dot
+.pa-button--default.is-loading {
+    .button-loader__dot {
+        border-color: $tip-color;
+    }
+}
+
+.pa-button--text.is-loading {
+    .button-loader__dot {
+        border-color: $btn-text-color;
+    }
+}
+
+.pa-button--link.is-loading {
+    .button-loader__dot {
+        border-color: $--link-color;
+    }
+}
+
+.button-loader {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__dot {
+        width: $dot-size;
+        height: $dot-size;
+        border: ($dot-size / 5) solid white;
+        border-radius: 50%;
+        float: left;
+        margin: 0 ($dot-size / 2);
+        transform: scale(0);
+        @include animation-dot();
+        &:nth-child(2) {
+            @include animation-dot($animation-speed * 0.3);
+        }
+        &:nth-child(3) {
+            @include animation-dot($animation-speed * 0.6);
+        }
+    }
+}

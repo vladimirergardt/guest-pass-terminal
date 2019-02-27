@@ -10,6 +10,21 @@ export default new Router({
       path: '/',
       name: 'Home',
       component: Home
+    },
+    {
+      path: '/select-search',
+      name: 'SelectSearch'
+      // component:
+    },
+    {
+      path: '/select-alphabet',
+      name: 'SelectAlphabet'
+      // component:
+    },
+    {
+      path: '/document-scan',
+      name: 'DocumentScan'
+      // component:
     }
   ]
 })
