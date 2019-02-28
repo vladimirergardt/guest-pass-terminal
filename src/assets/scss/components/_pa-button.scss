@@ -74,6 +74,9 @@
         //    background-color: $btn-primary-hover-color;
         //    border-color: $btn-primary-hover-color;
         //}
+        .pa-button__content .pa-icon {
+            color: #ffffff;
+        }
 
         &:active {
             background-color: $btn-primary-active-color;
@@ -85,11 +88,22 @@
         &.is-disabled {
             background-color: $btn-disabled-color;
             border-color: $btn-disabled-color;
+
+            .pa-button__content .pa-icon {
+                color: #c8cbd1;
+            }
         }
 
         &.is-loading {
             background-color: $btn-primary-color;
             border-color: $btn-primary-color;
+        }
+    }
+
+    &--primary:not(.is-disabled) {
+
+        .pa-button__content .pa-icon {
+            color: #ffffff !important;
         }
     }
 

@@ -1,0 +1,39 @@
+.pa-icon {
+    font-size: 22px;
+
+    &--small {
+        font-size: 12px;
+    }
+
+    &--large {
+        font-size: 48px;
+    }
+
+    &--big {
+        font-size: 72px;
+    }
+
+    &.is-disabled {
+        color: $tip-color;
+        cursor: default;
+    }
+}
+
+@include respond-to('mobile') {
+
+    .pa-icon {
+        font-size: 22px;
+
+        &--small {
+            font-size: 12px;
+        }
+
+        &--large {
+            font-size: 28px;
+        }
+
+        &--big {
+            font-size: 42px;
+        }
+    }
+}

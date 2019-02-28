@@ -5,7 +5,11 @@
  */
 
 const components = {
-  'pa-button': './pa-button/PaButton.vue'
+  'pa-button': './pa-button/PaButton.vue',
+  'pa-modal': './pa-modal/PaModal.vue',
+  'pa-icon': './pa-icon/PaIcon.vue',
+  'gpt-input-sms-code': './gpt-input-sms-code/GptInputSmsCode.vue',
+  'gpt-keyboard-sms-code': './gpt-keyboard-sms-code/GptKeyboardSmsCode.vue',
 };
 
 function install (Vue) {

@@ -7,15 +7,24 @@ export default {
   data() {
     return {
       promotionContext: 'Реклама',
+      isVisibleCodeModal: false,
+      isVisibleSubmitError: false,
+      code: '',
     }
   },
-  computed: {},
+  computed: {
+      checkStatusModal() {
+        !this.isVisibleCodeModal ? this.code = '' : false;
+      },
+    },
   methods: {
     checkCode() {
-        console.log('check code');
+      this.isVisibleCodeModal = true;
+    },
+    setCode(val) {
+      this.code = val;
     }
+    //
   },
-  mounted() {
-
-  },
+  mounted() {},
 }

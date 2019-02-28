@@ -1,6 +1,11 @@
 /***********
+/* FONTS */
+@import "fonts/fonts";
+
+/***********
 /* UTILS */
 @import "utils/variables";
+@import "utils/gpt-variables";
 @import "utils/mixins";
 @import "utils/functions";
 // @import "utils/transitions";
@@ -9,6 +14,11 @@
 /**************
 /* COMPONENTS */
 @import "components/pa-button";
+@import "components/pa-modal";
+@import "components/pa-overlay";
+@import "components/gpt-input-sms-code";
+@import "components/gpt-keyboard-sms-code";
+@import "components/pa-icon";
 
 
 /**************
@@ -18,4 +28,9 @@
 /**************
 /* VENDORS */
 // @import "vendors/element-ui/index";
+
+/**********
+/* BASE */
+@import "base/base";
+
 

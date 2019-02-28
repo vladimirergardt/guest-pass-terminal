@@ -3,7 +3,8 @@
 */
 
 <template>
-    <section class="gpt-home" @click="$router.push({ name: 'SelectSearch'})">
+    <section class="gpt-home">
+        <!-- @click="$router.push({ name: 'SelectSearch'})" -->
         <div class="gpt-home__banner">
             <el-row type="flex" align="middle" class="gpt-container" style="justify-content: flex-end">
                 <div class="gpt-home__content">
@@ -26,6 +27,18 @@
         <el-row type="flex" align="middle">
             <div class="gpt-home__promotion-banner"></div>
         </el-row>
+
+        <pa-modal title="Введите код из смс"
+                  v-model="checkStatusModal"
+                  size="medium" :visible.sync="isVisibleCodeModal">
+            <gpt-input-sms-code :value="code"
+                                :modalStatus="isVisibleCodeModal"
+                                @closeModal="isVisibleCodeModal = false"
+            ></gpt-input-sms-code>
+            <gpt-keyboard-sms-code @getCode="setCode"
+                                   :modalStatus="isVisibleCodeModal"
+            ></gpt-keyboard-sms-code>
+        </pa-modal>
     </section>
 </template>
 

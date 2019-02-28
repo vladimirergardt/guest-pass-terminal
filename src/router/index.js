@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '@/pages/Home/Home.vue'
+import SelectSearch from '@/pages/SelectSearch/SelectSearch.vue'
+import SelectAlphabet from '@/pages/SelectAlphabet/SelectAlphabet.vue'
 
 Vue.use(Router)
 
@@ -13,18 +15,18 @@ export default new Router({
     },
     {
       path: '/select-search',
-      name: 'SelectSearch'
-      // component:
+      name: 'SelectSearch',
+      component: SelectSearch
     },
     {
       path: '/select-alphabet',
-      name: 'SelectAlphabet'
-      // component:
+      name: 'SelectAlphabet',
+      component: SelectAlphabet
     },
     {
       path: '/document-scan',
       name: 'DocumentScan'
-      // component:
+      // component: SelectAlphabet
     }
   ]
 })

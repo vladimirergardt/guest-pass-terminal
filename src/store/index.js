@@ -14,8 +14,14 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   modules: {},
-  state: {},
-  getters: {},
+  state: {
+    smsCode: '111111'
+  },
+  getters: {
+    getSmsCode (state) {
+      return state.smsCode
+    }
+  },
   mutations: {},
   actions: {}
 })

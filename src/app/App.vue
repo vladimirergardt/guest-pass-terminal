@@ -61,4 +61,16 @@ export default {
     src: url("../assets/fonts/Roboto-Bold.ttf");
   }
 
+  @font-face {
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: 400;
+    src:
+            local('Material Icons'),
+            local('MaterialIcons-Regular'),
+            url('../assets/fonts/material-design-icons/MaterialIcons-Regular.woff2') format('woff2'),
+            url('../assets/fonts/material-design-icons/MaterialIcons-Regular.woff') format('woff'),
+            url('../assets/fonts/material-design-icons/MaterialIcons-Regular.ttf') format('truetype');
+  }
+
 </style>

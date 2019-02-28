@@ -57,3 +57,10 @@
          + 'Пожалуйста, убедитесь, что точка остановки объявлена в карте `$breakpoints`.';
   }
 }
+
+
+@mixin center-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

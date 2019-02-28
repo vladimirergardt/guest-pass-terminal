@@ -1,0 +1,59 @@
+.input-sms-code {
+
+  &__form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    @include center-flex;
+    position: relative;
+    width: 700px;
+
+    & .el-form-item__content {
+      line-height: 0;
+    }
+
+    & .el-form-item {
+       margin-bottom: 60px;
+    }
+  }
+
+  &__input input {
+    height: 50px;
+    width: 287px;
+    border-radius: 8px;
+    //border-right: none;
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+    border-color: $blue-color;
+    font: 18px "Roboto-Regular";
+    color: #2c4157;
+  }
+
+  &__btn {
+    height: 50px;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+    width: 90px;
+    background-color: $blue-color;
+  }
+
+  &__message {
+    height: 40px;
+    position: relative;
+    width: 100%;
+  }
+
+  &__error {
+    position: absolute;
+    top: 75px;
+    color: $error-message-color;
+    font: $error-message-font;
+  }
+
+  &__attention {
+    position: absolute;
+    left: -35px;
+    top: 13px;
+  }
+
+}
