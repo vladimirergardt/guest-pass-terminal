@@ -1,0 +1,11 @@
+.pass-is-ready {
+
+  &__text {
+    font-family: $roboto-regular;
+    font-size: 28px;
+    color: $modal-header-color;
+    text-align: center;
+    line-height: 1.3;
+    padding: 0 30px;
+  }
+}

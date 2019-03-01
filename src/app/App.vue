@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <router-view name="menu"/>
     <router-view/>
   </div>
 </template>
@@ -17,6 +18,8 @@ export default {
     padding: 0;
     margin: 0;
     height: 100vh;
+    /*width: 768px;*/
+    background-color: $bg-color;
   }
 
   body {

@@ -3,7 +3,11 @@
 */
 
 <template>
-    <h1>Select Search!</h1>
+    <section class="select-search gpt-container">
+        <h1>Select Search!</h1>
+
+        <gpt-keyboard type="search"></gpt-keyboard>
+    </section>
 </template>
 
 <script src="./select-search.js"></script>

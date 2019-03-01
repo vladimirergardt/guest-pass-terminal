@@ -2,7 +2,7 @@
  * Created by Ergardt.Vladimir on 28.02.2019
  */
 
-import { mapGetters } from 'vuex';
+import { mapGetters, mapActions } from 'vuex';
 
 export default {
   name: "gpt-input-sms-code",
@@ -45,14 +45,23 @@ export default {
     },
   },
   methods: {
+    ...mapActions([
+      'setPassStatus',
+    ]),
     submitForm() {
       const self = this;
       if (this.value !== this.getSmsCode) {
-        self.isVisibleSubmitError = true
+        self.isVisibleSubmitError = true;
+        this.$emit('codeStatus', false);
       } else {
         self.isVisibleSubmitError = false;
-        this.value = '';
-        console.log('code complete');
+        this.$emit('codeStatus', true);
+        this.setPassStatus(true);
+
+        setTimeout(() => {
+          this.setPassStatus(false);
+        }, 10000);
+
         this.$emit('closeModal');
       }
     },

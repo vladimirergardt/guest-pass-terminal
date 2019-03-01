@@ -4,6 +4,8 @@
  * @flow
  */
 
+import { mapGetters, mapActions } from 'vuex';
+
 import paButton from '@/components/pa-button/PaButton'
 
 export default {
@@ -46,7 +48,11 @@ export default {
       }
     };
   },
-  computed: {},
+  computed: {
+    ...mapGetters([
+      'getPassStatus',
+    ]),
+  },
   watch: {
     visible (value) {
       this.$emit('update:visible', value)
@@ -60,9 +66,15 @@ export default {
     },
   },
   methods: {
+    ...mapActions([
+      'setPassStatus',
+    ]),
     close () {
       this.$emit('update:visible', false)
       this.$emit('close')
+      this.getPassStatus
+        ? this.setPassStatus(false)
+        : false;
     },
     closeByEsc (evt) {
       if (evt.which === 27) this.close()

@@ -18,12 +18,16 @@
 @import "components/pa-overlay";
 @import "components/gpt-input-sms-code";
 @import "components/gpt-keyboard-sms-code";
+@import "components/gpt-pass-is-ready";
 @import "components/pa-icon";
+@import "components/gpt-nav";
+@import "components/gpt-keyboard";
 
 
 /**************
 /* PAGES */
 @import "pages/home";
+@import "pages/select-search";
 
 /**************
 /* VENDORS */

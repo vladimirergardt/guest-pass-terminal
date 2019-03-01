@@ -153,9 +153,11 @@ $sidebar-hover: #475669;
 $sidebar-active: #475669;
 
 $tip-color: #a1b3ad;
+$tip-page-color: rgba(210, 220, 217, 0.7);
 
 $text-color-1: $main-color-3;
 $text-color-2: #ffffff;
+$text-color-page: #007ed6;
 
 $accent-color-1: #9e4770;
 $accent-color-2: #bdc667;
@@ -164,6 +166,10 @@ $accent-color-3: #a2ad6c;
 $btn-default-color: transparent;
 $btn-default-hover-color: transparent;
 $btn-default-active-color: transparent;
+
+$btn-page-color: #e2ebe8;
+$btn-page-hover-color: transparent;
+$btn-page-active-color: transparent;
 
 $btn-primary-color: $main-color-1;
 $btn-primary-hover-color: #2765b8;

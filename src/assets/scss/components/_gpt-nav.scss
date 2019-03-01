@@ -1,0 +1,67 @@
+.gpt-nav {
+  padding: 24px 0;
+
+
+  &__btns {
+    width: 160px;
+    margin-bottom: 32px;
+  }
+
+  &__tabs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include center-flex;
+    width: calc(100% - 25px);
+    text-align: center;
+    height: $link-height;
+    background-color: $link-disabled-bg;
+    color: $link-disabled-color;;
+
+    & span:first-child,& span:last-child  {
+      width: 50%;
+      font-size: 18px;
+      font-family: $roboto-regular;
+      height: $link-height;
+      @include center-flex;
+    }
+
+    & span:after  {
+      content: '';
+      width: 0;
+      height: 0;
+      top: 0;
+      position: absolute;
+      border-top: 26px solid transparent;
+      border-left: 25px solid $link-disabled-bg;
+      border-bottom: 26px solid transparent;
+    }
+
+    & span:last-child:after {
+      right: 25px;
+    }
+
+    & span:first-child:after {
+      right: calc(50% - 13px);
+    }
+
+    & &--active {
+      background-color: #00bbba;
+      color: #ffffff;
+    }
+
+    & &--active:after {
+     border-left-color: #00bbba;
+    }
+
+
+  }
+
+  &__header {
+    @include main-header;
+    margin: 42px 0 0 0;
+    padding: 0;
+
+  }
+}
+

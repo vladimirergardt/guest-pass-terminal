@@ -1,0 +1,21 @@
+.gpt-keyboard {
+  @include center-flex;
+  flex-wrap: wrap;
+
+  &__key {
+    width: $keyboard-sms-btn-size + 1;
+    height: $keyboard-sms-btn-size;
+    border: 1px solid rgba(44, 65, 87, 0.25);
+    margin: 6px;
+    color: #007ed6;
+    font-family: "Roboto-Bold", sans-serif;
+    font-size: 30px;
+    border-radius: 8px;
+    @include center-flex;
+    background-color: #ffffff;
+
+  }
+
+
+
+}

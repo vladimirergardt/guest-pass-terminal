@@ -65,6 +65,34 @@
         }
     }
 
+    &--page {
+        background-color: $btn-page-color;
+        border-color: $tip-page-color;
+        color: $text-color-page;
+        font: 24px "Roboto-Regular";
+
+        //&:hover {
+        //    background-color: #f8f9f8;
+        //    border-color: $tip-color;
+        //}
+
+        &:active {
+            background-color: #d2dcd9;
+            border-color: rgba(210, 220, 217, 0.7);
+        }
+
+        &:focus {  }
+
+        &.is-disabled {
+            color: $btn-disabled-color;
+        }
+
+        &.is-loading {
+            background-color: $btn-default-color;
+            border-color: $tip-color;
+        }
+    }
+
     &--primary {
         background-color: $btn-primary-color;
         border-color: $btn-primary-color;
@@ -99,6 +127,8 @@
             border-color: $btn-primary-color;
         }
     }
+
+
 
     &--primary:not(.is-disabled) {
 

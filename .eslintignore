@@ -3,5 +3,5 @@
 /static/
 /dist/
 /*.js
-/src/components/*.js
+/src/components/
 /test/unit/coverage/
