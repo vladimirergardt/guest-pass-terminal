@@ -1,6 +1,7 @@
 .gpt-keyboard {
   @include center-flex;
   flex-wrap: wrap;
+  width: calc(570px + 62px + 62px);
 
   &__key {
     width: $keyboard-sms-btn-size + 1;
@@ -10,12 +11,64 @@
     color: #007ed6;
     font-family: "Roboto-Bold", sans-serif;
     font-size: 30px;
-    border-radius: 8px;
+    border-radius: $keyboard-sms-btn-radius;
     @include center-flex;
-    background-color: #ffffff;
+    background-color: $white-color;
+    @include keyboard-btn-shadow;
 
   }
 
+  &__key:active,
+  &__key-space:active {
+    background-color: $keyboard-sms-btn-active;
+    border-color: $keyboard-btn-border-color-active;
+  }
+
+  &__key.action-key {
+    background-color: $blue-color;
+    font-size: 20px;
+    color: #f2f2f2;
+    border: 1px solid  rgba(255, 255, 255, 0.5);
+
+    &--two-ceil {
+      width: 140px;
+    }
+  }
+
+  &__key.action-key:active {
+    background-color: $blue-color-active;
+  }
+
+  &__key-space {
+    width: 414px;
+    height: 48px;
+    background-color: $white-color;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    @include keyboard-btn-shadow;
+    border-radius: $keyboard-sms-btn-radius;
+    color: #007ed6;
+    font: $btn-action-font;
+    @include center-flex;
+    margin-top: 28px;
+  }
+
+  &__key-clear {
+    background-color: #ffa800;
+    color: $white-color;
+    border-radius: $keyboard-sms-btn-radius;
+    width: 95px;
+    height: 48px;
+    @include center-flex;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    font: $btn-action-font;
+    margin-left: 16px;
+    margin-top: 28px;
+  }
+
+  &__key-clear:active {
+    background-color: $yellow-color-active;
+    border-color: $btn-key-border-color-active;
+  }
 
 
 }

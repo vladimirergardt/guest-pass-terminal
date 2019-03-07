@@ -1,0 +1,32 @@
+.gpt-view-window {
+  padding: 16px 0;
+  background: white;
+  height: auto;
+  width: 723px;
+  border-radius: 8px;
+  margin: 36px 0 80px 0;
+  border: 1px solid #d7d7d7;
+  //min-height: 488px
+  font-family: "Roboto-Regular", sans-serif;
+  font-size: 18px;
+
+  &__header {
+    color: rgba(44, 65, 87, 0.5);
+    font-size: 18px;
+    margin: 5px 0;
+    padding: 0 16px;
+  }
+
+  &__row {
+    color: #263e57;
+    padding: 23px 16px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  &__row:last-child {
+    border-bottom: none;
+  }
+
+
+
+}

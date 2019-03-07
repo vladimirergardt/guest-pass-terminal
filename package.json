@@ -5,7 +5,7 @@
   "author": "v.ergardt <v.ergardt@chtp.net>",
   "private": true,
   "scripts": {
-    "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
+    "dev": "webpack-dev-server --inline --progress --host 0.0.0.0 --port 3000 --config build/webpack.dev.conf.js",
     "start": "npm run dev",
     "unit": "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js --single-run",
     "e2e": "node test/e2e/runner.js",
@@ -16,6 +16,7 @@
   "dependencies": {
     "@vue/babel-helper-vue-jsx-merge-props": "^1.0.0-beta.2",
     "@vue/babel-preset-jsx": "^1.0.0-beta.2",
+    "axios": "^0.18.0",
     "element-ui": "^2.5.4",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1",

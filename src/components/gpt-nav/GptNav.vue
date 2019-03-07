@@ -10,14 +10,14 @@
                 style="justify-content: space-between;">
             <pa-button class="gpt-nav__btns"
                        type="page"
-                       size="big"
+                       size="nav"
                        @click="$router.push({ name: getPreviousPage })">
                 <pa-icon name="arrow_back"></pa-icon>
                 Назад
             </pa-button>
             <pa-button class="gpt-nav__btns"
                        type="page"
-                       size="big"
+                       size="nav"
                        @click="$router.push({ name: 'Home'})">
                 Выйти
             </pa-button>

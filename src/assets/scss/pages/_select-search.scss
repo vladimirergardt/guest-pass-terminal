@@ -1,4 +1,48 @@
 .select-search {
   background-color: $bg-color;
-  // height: calc(100% - 230px);
+  font: $roboto-regular;
+
+  &__keyboard {
+    @include center-flex;
+    align-items: flex-start;
+    padding-top: 22px;
+    background-color: #e2ebe8;
+    height: 446px;
+  }
+
+  &__text {
+    color: $modal-header-color;
+    font-size: 24px;
+  }
+
+  &__filter {
+    position: relative;
+  }
+
+  &__filter-input {
+    width: 452px;
+    height: 44px;
+    color: $blue-color;
+    background: $white-color;
+    font: $error-message-font;
+    border-radius: $keyboard-sms-btn-radius;
+    outline: none;
+    border: 1px solid $blue-color;
+    padding-left: 26px;
+    padding-right: 50px;
+    position: relative;
+  }
+
+  &__filter-icon {
+    position: absolute;
+    z-index: 1;
+    top: 9px;
+    right: 9px;
+    color: #dadada;
+
+    .material-icons {
+      font-size: 32px;
+    }
+  }
 }
+
