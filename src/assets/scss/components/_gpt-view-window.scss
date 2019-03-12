@@ -1,14 +1,22 @@
 .gpt-view-window {
-  padding: 16px 0;
+  padding: 16px 0 0 0;
   background: white;
   height: auto;
-  width: 723px;
+  width: 717px;
   border-radius: 8px;
-  margin: 36px 0 80px 0;
+  margin: 36px 0 8px 0;
   border: 1px solid #d7d7d7;
   //min-height: 488px
   font-family: "Roboto-Regular", sans-serif;
   font-size: 18px;
+  // test nav
+  //max-height: calc(488px - 16px);
+  // overflow-y: hidden;
+
+  &__results {
+    overflow: hidden;
+    max-height: 462px;
+  }
 
   &__header {
     color: rgba(44, 65, 87, 0.5);
@@ -24,9 +32,82 @@
   }
 
   &__row:last-child {
-    border-bottom: none;
+     border-bottom: 1px solid white;
+    //border-bottom: none;
+  }
+
+  &__highlight {
+    background-color: rgba(0, 126, 214, 0.3);
   }
 
 
+  .gpt-search-fail {
+    @include center-flex;
+    flex-direction: column;
+    text-align: center;
+
+    @mixin fail-text {
+      font-size: 24px;
+      line-height: 1.5;
+      font-family: $roboto-medium;
+      color: $modal-header-color;
+    }
+
+    & .gpt-nav__header {
+      margin-top: 0;
+    }
+
+
+    &--text {
+      margin: 40px 0 30px 0;
+      @include fail-text;
+    }
+
+    &--block {
+      @include center-flex;
+      width: 445px;
+      @include fail-text;
+      text-align: left;
+    }
+  }
+
+}
+
+.gpt-view-nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+
+  &-btns:first-child {
+    margin-right: 32px;
+  }
+
+  &__btn:first-child {
+    margin-right: 16px;
+  }
+
+  &__btn {
+    height: 48px;
+    width: 48px;
+    border-radius: 50%;
+    border: 1px solid rgba(210, 220, 217, 0.7);
+    background: #e2ebe8;
+
+    & img {
+      width: 12px;
+    }
+
+    &.is-disabled {
+      cursor: not-allowed;
+      background: #d2dcd9;
+      border-color: rgba(210, 220, 217, 0.7);
+    }
+  }
+
+  &__btn:active {
+    background-color: $btn-active;
+    border-color: rgba(210, 220, 217, 0.7);
+  }
 
 }

@@ -13,7 +13,8 @@ const components = {
   'gpt-pass-is-ready' : './gpt-pass-is-ready/GptPassIsReady.vue',
   'gpt-nav' : './gpt-nav/GptNav.vue',
   'gpt-keyboard' : './gpt-keyboard/GptKeyboard.vue',
-  'gpt-view-window' : './gpt-view-window/GptViewWindow.vue'
+  'gpt-view-window' : './gpt-view-window/GptViewWindow.vue',
+  'highlight' : './src/wrappers/Highlight/highlight.js'
 };
 
 function install (Vue) {

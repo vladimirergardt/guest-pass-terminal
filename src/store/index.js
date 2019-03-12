@@ -31,6 +31,9 @@ export default new Vuex.Store({
     getPreviousPage (state) {
       return state.previousPage
     },
+    getOrganizations (state) {
+      return state.organizations
+    },
     getOftenOrganizations (state) {
       return state.organizations.filter(organization => organization.often)
     }
