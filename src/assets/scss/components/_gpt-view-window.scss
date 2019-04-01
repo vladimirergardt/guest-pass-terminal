@@ -1,5 +1,5 @@
 .gpt-view-window {
-  padding: 16px 0 0 0;
+  // padding: 16px 0 0 0;
   background: white;
   height: auto;
   width: 717px;
@@ -15,20 +15,31 @@
 
   &__results {
     overflow: hidden;
-    max-height: 462px;
+    // max-height: 462px;
   }
 
   &__header {
     color: rgba(44, 65, 87, 0.5);
     font-size: 18px;
     margin: 5px 0;
-    padding: 0 16px;
+    padding: 16px 16px 0 16px;
   }
 
   &__row {
     color: #263e57;
     padding: 23px 16px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  &__row-title {
+    color: $blue-color;
+    font: 30px $roboto-regular;
+    padding-top: 0;
+    padding-bottom: 0;
+    height: 66px;
+    border-bottom: none;
+    display: flex;
+    align-items: center;
   }
 
   &__row:last-child {

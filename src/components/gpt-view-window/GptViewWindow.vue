@@ -5,23 +5,28 @@
 <template>
     <div>
         <div class="gpt-view-window">
-            <template v-if="filteredData.length">
-                <h2 class="gpt-view-window__header">
+            <template v-show="filteredData.length">
+                <h2 v-if="type === 'search'" class="gpt-view-window__header">
                     {{ searchValue === ''
                         ? `Часто посещаемые`
                         : `Найдено ${filteredData.length}` }}
                 </h2>
-                <div ref="resultWindow" class="gpt-view-window__results">
-                    <div ref="resultRow" class="gpt-view-window__row"
+                <div ref="resultWindow"
+                     class="gpt-view-window__results"
+                     :style="{ 'max-height': windowHeight + 'px' }">
+                    <div
+                         ref="resultRow"
+                         class="gpt-view-window__row"
+                         :class="{'gpt-view-window__row-title': org.type === 'title'}"
                          v-for="(org, i) in filteredData"
-                    > {{ i }}
+                    > {{ i }})
                         <highlight :message="org.name"
                                    :search="searchValue"
                                    classValue="gpt-view-window__highlight" />
                     </div>
                 </div>
             </template>
-            <template v-else>
+            <template v-if="!filteredData.length && type === 'search'">
                 <div class="gpt-search-fail" style="height: 488px">
                     <h3 class="gpt-nav__header">Такой компании нет в списке</h3>
                     <div class="gpt-search-fail--text">Уточните название у контактного лица</div>

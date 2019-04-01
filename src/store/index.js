@@ -6,6 +6,8 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import axios from 'axios'
 
+import Alphabet from '@/utils/classes/alphabet'
+
 import * as types from './mutation-types'
 /**
  * Импорт modules (если будут)
@@ -13,13 +15,19 @@ import * as types from './mutation-types'
 
 Vue.use(Vuex)
 
+// Базовый URL
+const API = (body) => {
+  return axios.post('/classes/6550101/api/v1/gql.php', body)
+}
+
 export default new Vuex.Store({
   modules: {},
   state: {
     smsCode: '111111',
     passIsReady: false,
     previousPage: '',
-    organizations: []
+    organizations: [],
+    alphabetOrganizations: []
   },
   getters: {
     getSmsCode (state) {
@@ -36,6 +44,9 @@ export default new Vuex.Store({
     },
     getOftenOrganizations (state) {
       return state.organizations.filter(organization => organization.often)
+    },
+    getAlphabetOrganization (state) {
+      return state.alphabetOrganizations
     }
   },
   mutations: {
@@ -58,6 +69,13 @@ export default new Vuex.Store({
      */
     [types.SET_ORGANIZATIONS] (state, payload) {
       state.organizations = payload
+    },
+
+    /**
+     * Сохранить список организаций по алфавиту
+     */
+    [types.SET_ORGANIZATIONS_ALPHABET] (state, payload) {
+      state.alphabetOrganizations = Alphabet.getAlphabetList(payload.list);
     }
   },
   actions: {
@@ -74,14 +92,14 @@ export default new Vuex.Store({
      * Полуить список организация
      */
     getOrganizations ({commit}) {
-      return axios.get('../static/organizations.json')
-        .then((response) => {
-          if (response.data.data) {
-            commit(types.SET_ORGANIZATIONS, response.data.data)
-          }
+      const body = { query: `query { terminal { getCAgent { id name score rated } } }`}
 
-          // const arr = response.data.data.organizations.find(organization => organization.often === true)
-          // console.log(arr);
+      return API(body)
+        .then((response) => {
+          if (response.data) {
+            commit(types.SET_ORGANIZATIONS, response.data.data.terminal.getCAgent)
+            commit(types.SET_ORGANIZATIONS_ALPHABET, { list: response.data.data.terminal.getCAgent })
+          }
         })
         .catch((e) => {
           console.log(e)

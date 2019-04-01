@@ -4,4 +4,6 @@
 /dist/
 /*.js
 /src/components/
+/src/utils/
+/src/store/
 /test/unit/coverage/

@@ -7,7 +7,7 @@
         <el-row type="flex"
                 align="middle"
                 justify="space-between"
-                class="gpt-container"> <!-- justify="space-between" -->
+                class="gpt-container">
 
             <span class="select-search__text">Поиск</span>
 
@@ -32,13 +32,11 @@
 
         <el-row type="flex" class="gpt-container">
             <!-- Result search-->
-            <gpt-view-window :searchValue="value"></gpt-view-window>
-            <!--div class="" style="padding: 16px; background: white; height: auto; width: 723px; border-radius: 8px; margin: 36px 0 80px 0; border: 1px solid #d7d7d7; min-height: 488px">
-                <div v-if="value === ''">
-                    <h5>Часто посещаемые</h5>
-                    <div v-for="org in getOftenOrganizations"> {{ org.name }}</div>
-                </div>
-            </div-->
+            <gpt-view-window :searchValue="value"
+                             type="search"
+                             :windowHeight="minWindow"
+                             :maxLength="7"
+            ></gpt-view-window>
         </el-row>
 
         <el-row type="flex" class="select-search__keyboard">

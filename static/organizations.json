@@ -1,0 +1,104 @@
+{
+  "data": [
+    {
+      "name": "ООО Мир",
+      "id": 1,
+      "often": true
+    },
+    {
+      "name": "ООО Чтп",
+      "id": 2,
+      "often": false
+    },
+    {
+      "name": "Адвайс IT",
+      "id": 3,
+      "often": false
+    },
+    {
+      "name": "Балт-сервис Карго",
+      "id": 4,
+      "often": false
+    },
+    {
+      "name": "ООО Аэроплан",
+      "id": 5,
+      "often": true
+    },
+    {
+      "name": "Авивкурьер, транспортное агенство",
+      "id": 6,
+      "often": true
+    },
+    {
+      "name": "Виртранс, транспортная компания",
+      "id": 7,
+      "often": true
+    },
+    {
+      "name": "Теремок",
+      "id": 8,
+      "often": false
+    },
+    {
+      "name": "ООО Ресурс",
+      "id": 9,
+      "often": false
+    },
+    {
+      "name": "Экс Сити",
+      "id": 10,
+      "often": false
+    },
+    {
+      "name": "Балт-сервис Карго",
+      "id": 11,
+      "often": false
+    },
+    {
+      "name": "ООО Аэроплан",
+      "id": 12,
+      "often": true
+    },
+    {
+      "name": "Авивкурьер, транспортное агенство",
+      "id": 13,
+      "often": true
+    },
+    {
+      "name": "Виртранс, транспортная компания",
+      "id": 14,
+      "often": true
+    },
+    {
+      "name": "Теремок",
+      "id": 15,
+      "often": false
+    },
+    {
+      "name": "ООО Ресурс",
+      "id": 16,
+      "often": false
+    },
+    {
+      "name": "Экс Ситиo",
+      "id": 17,
+      "often": true
+    },
+    {
+      "name": "Экс Ситиo",
+      "id": 18,
+      "often": true
+    },
+    {
+      "name": "Экс Ситиo",
+      "id": 19,
+      "often": true
+    },
+    {
+      "name": "Экс Ситиo",
+      "id": 20,
+      "often": true
+    }
+  ]
+}

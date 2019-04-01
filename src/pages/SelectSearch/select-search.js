@@ -9,6 +9,7 @@ export default {
   data() {
     return {
       value: '',
+      minWindow: 462,
     }
   },
   props: {},

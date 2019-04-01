@@ -10,7 +10,7 @@ export default {
   name: "gpt-view-window",
   data() {
     return {
-      maxLength: 7,
+      // maxLength: 7,
       valueScroll: 0,
       disabledBtn: false,
     }
@@ -22,26 +22,51 @@ export default {
     searchValue: {
       type: String,
       require: true,
+    },
+    windowHeight: {
+      type: Number,
+      require: true,
+    },
+    maxLength: {
+      type: Number,
+      require: true,
+    },
+    type: {
+      type: String,
+      require: true,
+    },
+    organizations: {
+      type: Array,
+      require: true,
     }
   },
   computed: {
     ...mapGetters([
       'getOrganizations',
       'getOftenOrganizations',
+      'getAlphabetOrganization',
     ]),
     filteredData() {
-      if (this.searchValue === '') return this.getOftenOrganizations;
+      const search = this.type === 'search';
+      const alphabet = this.type === 'alphabet';
+
+      if (this.searchValue === '' && search) return this.getOftenOrganizations;
       // Выдача результатов по приоритетам н: о, "о"фыв, фы"о".
-      return this.getOrganizations
-        .filter(org => org.name.toLowerCase()
-          .indexOf(this.searchValue.toLowerCase()) > -1);
+      if (alphabet) return this.getAlphabetOrganization;
+
+      if (search) {
+        return this.getOrganizations
+          .filter(org => org.name.toLowerCase()
+            .indexOf(this.searchValue.toLowerCase()) > -1);
+      }
     },
     organizationsList() {
       return this.$refs.resultWindow;
     },
-    resultRowHeight() {
-      const border = 1; // нижняя граница (px)
-      return this.$refs.resultRow[0].clientHeight + border;
+    resultRowHeight () {
+      // const border = 1; // нижняя граница (px)
+      // return this.$refs.resultRow[0].clientHeight + border;
+      return 66;
     },
     maxScroll() {
       return (this.filteredData.length * this.resultRowHeight) - (this.resultRowHeight * this.maxLength);
@@ -63,9 +88,12 @@ export default {
 
       const i = setInterval(() => { // скролл
 
+        // 11 * items - скорость скролла,
+        // определять динамически в зависимости от кольичества организаций
+
         props === 'down'
-          ? this.organizationsList.scrollTop += 1 * items
-          : this.organizationsList.scrollTop -= 1 * items;
+          ? this.organizationsList.scrollTop += 11 * items
+          : this.organizationsList.scrollTop -= 11 * items;
 
         const max = items === this.maxLength;
 
@@ -91,9 +119,9 @@ export default {
     },
     async getScrollValue() {
       this.$refs.resultWindow.onscroll = () => {
-          this.valueScroll = this.$refs.resultWindow.scrollTop
-        }
-    }
+        this.valueScroll = this.$refs.resultWindow.scrollTop
+      }
+    },
   },
   mounted() {
     this.getScrollValue();
