@@ -30,7 +30,7 @@
             >А-Я</pa-button>
         </el-row>
 
-        <el-row type="flex" class="gpt-container">
+        <el-row type="flex" class="gpt-container" justify="center">
             <!-- Result search-->
             <gpt-view-window :searchValue="value"
                              type="search"

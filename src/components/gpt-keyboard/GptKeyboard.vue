@@ -8,6 +8,7 @@
             <div class="gpt-keyboard__key"
                  v-for="n in computedAlphabet"
                  @click="addValue(n)"
+                 :class="{ 'gpt-keyboard__key-disabled': disabledBtn(n) }"
             >{{ n }}</div>
 
             <template v-if="type === 'search'">

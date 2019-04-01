@@ -19,8 +19,10 @@
                          class="gpt-view-window__row"
                          :class="{'gpt-view-window__row-title': org.type === 'title'}"
                          v-for="(org, i) in filteredData"
-                    > {{ i }})
-                        <highlight :message="org.name"
+                         @click="selectOrganization(org)"
+                    >
+                        <span v-if="type === 'alphabet'">{{ org.name }}</span>
+                        <highlight v-if="type === 'search'" :message="org.name"
                                    :search="searchValue"
                                    classValue="gpt-view-window__highlight" />
                     </div>

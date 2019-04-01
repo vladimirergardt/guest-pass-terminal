@@ -8,7 +8,7 @@
                 align="middle"
                 justify="space-between"
                 class="gpt-container">
-            <span class="select-search__text">Алфавитный указатель</span> {{ this.value }}
+            <span class="select-search__text">Алфавитный указатель</span>
             <pa-button type="page"
                        size="nav"
                        @click="$router.push({ name: 'SelectSearch' })"
@@ -27,12 +27,14 @@
             ></gpt-keyboard>
             <span class="select-alphabet__to-keyboard"
                   v-if="!showKeyboard"
-                  @click="showKeyboard = true">
+                  @click="backToAlphabet">
                 <pa-icon name="arrow_back"></pa-icon>
                 К алфавиту</span>
         </el-row>
             <!-- Window Result -->
-        <el-row type="flex" class="select-alphabet__window-result gpt-container">
+        <el-row type="flex"
+                class="select-alphabet__window-result gpt-container"
+                justify="center">
             <gpt-view-window :searchValue="value"
                              type="alphabet"
                              :windowHeight="windowSize"

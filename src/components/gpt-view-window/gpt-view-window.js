@@ -50,9 +50,18 @@ export default {
       const search = this.type === 'search';
       const alphabet = this.type === 'alphabet';
 
-      if (this.searchValue === '' && search) return this.getOftenOrganizations;
+      if (this.searchValue === '' && search) {
+        // Если часто посещаемых нет, выводим первые 7
+        return this.getOftenOrganizations.length
+          ? this.getOftenOrganizations
+          : this.getOrganizations.slice(0, 7);
+      }
       // Выдача результатов по приоритетам н: о, "о"фыв, фы"о".
-      if (alphabet) return this.getAlphabetOrganization;
+      if (alphabet){
+        return this.searchValue === ''
+          ? this.getAlphabetOrganization
+          : this.getAlphabetOrganization.filter(org => org.letter === this.searchValue)
+      }
 
       if (search) {
         return this.getOrganizations
@@ -80,7 +89,7 @@ export default {
   },
   methods: {
     ...mapActions([
-
+      'setOrganization',
     ]),
     scrolling(props, items) {
       let count = this.organizationsList.scrollTop;
@@ -122,9 +131,19 @@ export default {
         this.valueScroll = this.$refs.resultWindow.scrollTop
       }
     },
+
+    /**
+     * Выбор органицзации и переход на страницу сканирования
+     */
+    async selectOrganization(org) {
+      if (org.type === 'letter') {
+          await this.setOrganization(org);
+          await this.$router.push({ name: 'DocumentScan'});
+      }
+    }
   },
   mounted() {
-    this.getScrollValue();
+    this.getScrollValue(); // todo: Перенести на главную страницу, обновлять только на ней !!!
   },
   created() {},
 }

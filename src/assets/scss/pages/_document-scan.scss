@@ -1,0 +1,109 @@
+.document-scan {
+
+  &__instruction {
+    @include center-flex;
+    position: relative;
+
+    &-animation {
+      position: absolute;
+      top: -30px;
+      height: 450px;
+      right: 55px;
+    }
+  }
+
+  &__row {
+    flex-direction: column;
+    margin-top: 36px;
+  }
+
+  &__info {
+    display: flex;
+    padding-bottom: 21px;
+    align-items: center;
+
+    &-num {
+      background-color: $pages-alert;
+      border-radius: 50%;
+      min-width: 34px;
+      height: 34px;
+      font: 24px "Roboto-Bold";
+      color: $white-color;
+      @include center-flex;
+      margin-right: 18px;
+    }
+
+    &-text {
+      font: 28px "Roboto-Regular";
+      color: $pages-text;
+      line-height: 36px;
+    }
+
+    &-alert {
+      color: $pages-alert;
+    }
+  }
+
+  &__camera {
+    flex-direction: column;
+    align-items: center;
+
+    &-img {
+      height: 315px;
+      width: 440px;
+    }
+
+    &-btn {
+      width: 440px;
+      height: 78px;
+      border-radius: $keyboard-sms-btn-radius;
+      font: 28px "Roboto-Bold";
+      margin-top: 20px;
+    }
+
+    &-loading {
+      position: absolute;
+      width: 440px;
+      height: 315px;
+      top: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+
+      & i {
+        font-size: 60px;
+      }
+
+      & p {
+        font-size: 24px;
+      }
+    }
+  }
+
+  &__footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: #e2ebe8;
+    height: 126px;
+    align-items: center;
+    justify-content: space-between;
+
+    &-text {
+      font: 18px "Roboto-Regular";
+      color: $pages-text;
+    }
+
+    &-question {
+      min-height: 55px;
+      min-width: 55px;
+      color: $pages-alert;
+      font-size: 55px;
+      margin-right: 20px;
+    }
+  }
+
+
+
+}

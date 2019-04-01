@@ -33,7 +33,11 @@ export default {
     size: {
       type: String,
       default: ''
-    }
+    },
+    typeModal: {
+      type: String,
+      required: true,
+    },
   },
   data () {
     return {
@@ -69,12 +73,16 @@ export default {
     ...mapActions([
       'setPassStatus',
     ]),
-    close () {
+    async close () {
       this.$emit('update:visible', false)
       this.$emit('close')
-      this.getPassStatus
-        ? this.setPassStatus(false)
-        : false;
+
+      if(this.typeModal === 'success'){
+        await this.getPassStatus
+          ? this.setPassStatus(false)
+          : false;
+        await this.$router.push( { name: 'Home' });
+      }
     },
     closeByEsc (evt) {
       if (evt.which === 27) this.close()

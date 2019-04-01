@@ -35,9 +35,12 @@ export default {
          'getOrganizations',
       ]),
     addValue(value) {
-      console.log(value);
       this.value = value;
       this.showKeyboard = false;
+    },
+    backToAlphabet() {
+      this.showKeyboard = true;
+      this.value = '';
     }
   },
   mounted() {

@@ -27,7 +27,8 @@ export default new Vuex.Store({
     passIsReady: false,
     previousPage: '',
     organizations: [],
-    alphabetOrganizations: []
+    alphabetOrganizations: [],
+    currentOrganization: '',
   },
   getters: {
     getSmsCode (state) {
@@ -43,11 +44,14 @@ export default new Vuex.Store({
       return state.organizations
     },
     getOftenOrganizations (state) {
-      return state.organizations.filter(organization => organization.often)
+      return state.organizations.filter(organization => organization.rate)
     },
     getAlphabetOrganization (state) {
       return state.alphabetOrganizations
-    }
+    },
+    getLetters (state) {
+      return Alphabet.getLetters(state.alphabetOrganizations);
+    },
   },
   mutations: {
     /**
@@ -76,6 +80,13 @@ export default new Vuex.Store({
      */
     [types.SET_ORGANIZATIONS_ALPHABET] (state, payload) {
       state.alphabetOrganizations = Alphabet.getAlphabetList(payload.list);
+    },
+
+    /**
+     * Сохранить id выбранной организации
+     */
+    [types.SET_CURRENT_ORGANIZATION] (state, payload) {
+      state.currentOrganization = payload
     }
   },
   actions: {
@@ -104,9 +115,16 @@ export default new Vuex.Store({
         .catch((e) => {
           console.log(e)
         })
+    },
+
+    /**
+     * Добавление организации
+     */
+    setOrganization({commit}, amount) {
+      commit(types.SET_CURRENT_ORGANIZATION, amount.id);
     }
-    // Todo: Написать мутации добавления организаций в стор,
+    // Todo: Написать мутации добавления организаций в стор, +
     // Todo: геттер получения часто используемых компаний,
-    // Todo: начать пагинацию, переход по странично, по элементу
+    // Todo: начать пагинацию, переход по странично, по элементу +
   }
 })

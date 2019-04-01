@@ -31,6 +31,7 @@
             </el-row>
         </div>
         <pa-modal title="Введите код из смс"
+                  typeModal="sms"
                   v-model="checkStatusModal"
                   size="medium" :visible.sync="isVisibleCodeModal">
             <gpt-input-sms-code :value="code"

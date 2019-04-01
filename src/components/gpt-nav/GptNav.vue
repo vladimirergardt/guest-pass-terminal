@@ -40,28 +40,11 @@
         </el-row>
 
         <el-row class="gpt-container" type="flex" align="middle">
-            <h3 class="gpt-nav__header">
+            <h3 v-if="viewHeader"
+                class="gpt-nav__header">
                 Выберите компанию для посещения
             </h3>
         </el-row>
-
-
-
-        <!-- test -->
-        <!-- el-row type="flex" class="gpt-container">
-            <pa-button class="gpt-nav__btns"
-                       type="primary"
-                       size="small"
-                       @click="$router.push({ name: 'DocumentScan' })"> to DocumentScan</pa-button>
-            <pa-button class="gpt-nav__btns"
-                       type="primary"
-                       size="small"
-                       @click="$router.push({ name: 'SelectAlphabet' })"> to SelectAlphabet</pa-button>
-            <pa-button class="gpt-nav__btns"
-                       type="primary"
-                       size="small"
-                       @click="$router.push({ name: 'SelectSearch' })"> to SelectSearch</pa-button>
-        </el-row -->
 
     </section>
 </template>

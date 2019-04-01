@@ -11,6 +11,7 @@ const components = {
   'gpt-input-sms-code': './gpt-input-sms-code/GptInputSmsCode.vue',
   'gpt-keyboard-sms-code': './gpt-keyboard-sms-code/GptKeyboardSmsCode.vue',
   'gpt-pass-is-ready' : './gpt-pass-is-ready/GptPassIsReady.vue',
+  'gpt-pass-no-ready' : './gpt-pass-no-ready/GptPassNoReady.vue',
   'gpt-nav' : './gpt-nav/GptNav.vue',
   'gpt-keyboard' : './gpt-keyboard/GptKeyboard.vue',
   'gpt-view-window' : './gpt-view-window/GptViewWindow.vue',

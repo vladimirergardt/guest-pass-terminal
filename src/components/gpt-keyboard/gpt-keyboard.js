@@ -2,6 +2,8 @@
  * Created by Ergardt.Vladimir on 01.03.2019
  */
 
+import { mapGetters } from 'vuex';
+
 const ALPHABET = 'абвгдеёжзийклмнопрстуфхцчшщьыъэюя';
 const NUMERIC = '1234567890-/.,!';
 
@@ -19,12 +21,21 @@ export default {
     }
   },
   computed: {
+    ...mapGetters([
+      'getLetters',
+    ]),
     computedAlphabet() {
       return this.alphabet.toUpperCase().split('');
     },
   },
   methods: {
+    disabledBtn(letter) {
+      return this.getLetters
+        .indexOf(letter) === -1
+        && this.type === 'alphabet';
+    },
     addValue(value) {
+      if (this.disabledBtn(value)) return false;
       this.$emit('add-value', value);
     },
     addSpace() {
@@ -41,11 +52,6 @@ export default {
         this.alphabet === NUMERIC
         ? ALPHABET
         : NUMERIC;
-
-      // return this.alphabet =
-      //   this.alphabet === this.alphabet.toUpperCase()
-      //   ? this.alphabet.toLowerCase()
-      //   : this.alphabet.toUpperCase();
     },
   },
   mounted() {

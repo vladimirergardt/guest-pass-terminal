@@ -16,6 +16,9 @@
     background-color: $white-color;
     @include keyboard-btn-shadow;
 
+    &-disabled {
+      color: rgba(44, 65, 87, 0.3);
+    }
   }
 
   &__key:active,

@@ -5,6 +5,7 @@
 <template>
     <section class="pass-is-ready">
         <pa-modal title="Ваш пропуск готов"
+                  typeModal="success"
                   size="medium"
                   :visible="getPassStatus">
             <img src="@/assets/images/animation/pass_anim.gif"/>

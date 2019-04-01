@@ -21,6 +21,9 @@ export default {
     ...mapGetters([
       'getPreviousPage',
     ]),
+    viewHeader() {
+      return this.pathName !== 'DocumentScan';
+    },
   },
   methods: {
     getPageName() {
