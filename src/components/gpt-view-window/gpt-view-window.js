@@ -38,6 +38,10 @@ export default {
     organizations: {
       type: Array,
       require: true,
+    },
+    loading: {
+      type: Boolean,
+      require: true,
     }
   },
   computed: {

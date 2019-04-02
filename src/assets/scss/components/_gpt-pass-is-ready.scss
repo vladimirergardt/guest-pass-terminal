@@ -1,6 +1,4 @@
-.pass-is-ready {
-
-  &__text {
+  @mixin pass-ready-modal-text {
     font-family: $roboto-regular;
     font-size: 28px;
     color: $modal-header-color;
@@ -8,4 +6,30 @@
     line-height: 1.3;
     padding: 0 30px;
   }
+
+.pass-is-ready {
+
+  &__text {
+    @include pass-ready-modal-text;
+  }
+}
+
+.pass-no-ready {
+
+  &__text {
+    @include pass-ready-modal-text;
+    margin-top: 0;
+  }
+  & .pa-modal__content-inner {
+    margin: 0;
+  }
+
+  &__imgs img {
+    height: 262px;
+
+    &:first-child {
+      margin-right: 16px;
+    }
+  }
+
 }

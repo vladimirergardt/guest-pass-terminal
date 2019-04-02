@@ -15,7 +15,7 @@ export default {
   },
   computed: {
     ...mapGetters([
-      'getPassStatus',
+      'getPassStatusIsReady',
     ]),
   },
   methods: {},

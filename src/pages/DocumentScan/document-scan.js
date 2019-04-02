@@ -13,27 +13,29 @@ export default {
   },
   computed: {
     ...mapGetters([
-      'getPassStatus',
+      'getPassStatusIsReady',
     ]),
   },
   methods: {
     ...mapActions([
       'setPassStatus',
+      'setPassIsNotReadyStatus',
     ]),
     async scanningDocument() {
       this.scanning = true;
       setTimeout( async() => {
         this.scanning = false;
-        await this.setPassStatus(true);
+        await this.setPassIsNotReadyStatus(true);
       }, 3000);
 
 
       // Возврат на главную через 10 сек
-      // if (await this.getPassStatus) {
-      setTimeout(async () => {
-        await this.setPassStatus(false);
-        await this.$router.push({name: 'Home'});
-      }, 10000);
+      // if (await this.getPassStatusIsReady) {
+
+      // setTimeout(async () => {
+      //   await this.setPassStatus(false);
+      //   await this.$router.push({name: 'Home'});
+      // }, 10000);
       // }
     }
   },

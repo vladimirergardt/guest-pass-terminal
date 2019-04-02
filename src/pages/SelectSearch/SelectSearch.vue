@@ -33,6 +33,7 @@
         <el-row type="flex" class="gpt-container" justify="center">
             <!-- Result search-->
             <gpt-view-window :searchValue="value"
+                             :loading="true"
                              type="search"
                              :windowHeight="minWindow"
                              :maxLength="7"

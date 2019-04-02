@@ -54,7 +54,8 @@ export default {
   },
   computed: {
     ...mapGetters([
-      'getPassStatus',
+      'getPassStatusIsReady',
+      'getPassStatusIsNotReady',
     ]),
   },
   watch: {
@@ -72,16 +73,23 @@ export default {
   methods: {
     ...mapActions([
       'setPassStatus',
+      'setPassIsNotReadyStatus',
     ]),
     async close () {
       this.$emit('update:visible', false)
       this.$emit('close')
 
       if(this.typeModal === 'success'){
-        await this.getPassStatus
+        await this.getPassStatusIsReady
           ? this.setPassStatus(false)
           : false;
         await this.$router.push( { name: 'Home' });
+      }
+
+      if(this.typeModal === 'no-success') {
+        await this.getPassStatusIsNotReady
+          ? this.setPassIsNotReadyStatus(false)
+          : false;
       }
     },
     closeByEsc (evt) {

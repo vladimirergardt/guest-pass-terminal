@@ -25,6 +25,7 @@ export default new Vuex.Store({
   state: {
     smsCode: '111111',
     passIsReady: false,
+    passIsNotReady: false,
     previousPage: '',
     organizations: [],
     alphabetOrganizations: [],
@@ -34,8 +35,11 @@ export default new Vuex.Store({
     getSmsCode (state) {
       return state.smsCode
     },
-    getPassStatus (state) {
+    getPassStatusIsReady (state) {
       return state.passIsReady
+    },
+    getPassStatusIsNotReady (state) {
+      return state.passIsNotReady
     },
     getPreviousPage (state) {
       return state.previousPage
@@ -59,6 +63,13 @@ export default new Vuex.Store({
      * */
     [types.PASS_IS_READY] (state, payload) {
       state.passIsReady = payload
+    },
+
+    /**
+     * Статус "Документ не распознался"
+     * */
+    [types.PASS_IS_NOT_READY] (state, payload) {
+      state.passIsNotReady = payload
     },
 
     /**
@@ -95,6 +106,11 @@ export default new Vuex.Store({
         commit(types.PASS_IS_READY, amount)
       }, 0)
     },
+    setPassIsNotReadyStatus ({commit}, amount) {
+      setTimeout(() => {
+        commit(types.PASS_IS_NOT_READY, amount)
+      }, 0)
+    },
     setPreviousPage ({commit}, amount) {
       return commit(types.SET_PREVIOUS_PAGE, amount)
     },
@@ -103,18 +119,29 @@ export default new Vuex.Store({
      * Полуить список организация
      */
     getOrganizations ({commit}) {
-      const body = { query: `query { terminal { getCAgent { id name score rated } } }`}
-
-      return API(body)
+      // const body = { query: `query { terminal { getCAgent { id name score rated } } }`}
+      //
+      // return API(body)
+      //   .then((response) => {
+      //     if (response.data) {
+      //       commit(types.SET_ORGANIZATIONS, response.data.data.terminal.getCAgent)
+      //       commit(types.SET_ORGANIZATIONS_ALPHABET, { list: response.data.data.terminal.getCAgent })
+      //     }
+      //   })
+      //   .catch((e) => {
+      //     console.log(e)
+      //   })
+      return axios.get('../static/organizations.json')
         .then((response) => {
-          if (response.data) {
-            commit(types.SET_ORGANIZATIONS, response.data.data.terminal.getCAgent)
-            commit(types.SET_ORGANIZATIONS_ALPHABET, { list: response.data.data.terminal.getCAgent })
+          if (response.data.data) {
+            commit(types.SET_ORGANIZATIONS, response.data.data)
+            commit(types.SET_ORGANIZATIONS_ALPHABET, { list: response.data.data })
           }
         })
         .catch((e) => {
           console.log(e)
         })
+
     },
 
     /**

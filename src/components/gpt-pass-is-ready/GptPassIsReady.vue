@@ -7,7 +7,7 @@
         <pa-modal title="Ваш пропуск готов"
                   typeModal="success"
                   size="medium"
-                  :visible="getPassStatus">
+                  :visible="getPassStatusIsReady">
             <img src="@/assets/images/animation/pass_anim.gif"/>
             <p class="pass-is-ready__text">
                 Возьмите пропуск. Для входа приложите его к считывающему устройству

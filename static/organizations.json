@@ -3,102 +3,122 @@
     {
       "name": "ООО Мир",
       "id": 1,
-      "often": true
+      "rated": false,
+      "score": 0
     },
     {
       "name": "ООО Чтп",
       "id": 2,
-      "often": false
+      "rated": false,
+      "score": 0
     },
     {
       "name": "Адвайс IT",
       "id": 3,
-      "often": false
+      "rated": false,
+      "score": 0
     },
     {
       "name": "Балт-сервис Карго",
       "id": 4,
-      "often": false
+      "rated": false,
+      "score": 0
     },
     {
       "name": "ООО Аэроплан",
       "id": 5,
-      "often": true
+      "rated": false,
+      "score": 0
     },
     {
       "name": "Авивкурьер, транспортное агенство",
       "id": 6,
-      "often": true
+      "rated": false,
+      "score": 0
     },
     {
       "name": "Виртранс, транспортная компания",
       "id": 7,
-      "often": true
+      "rated": false,
+      "score": 0
     },
     {
       "name": "Теремок",
       "id": 8,
-      "often": false
+      "rated": false,
+      "score": 0
     },
     {
       "name": "ООО Ресурс",
       "id": 9,
-      "often": false
+      "rated": false,
+      "score": 0
     },
     {
       "name": "Экс Сити",
       "id": 10,
-      "often": false
+      "rated": false,
+      "score": 0
     },
     {
       "name": "Балт-сервис Карго",
       "id": 11,
-      "often": false
+      "rated": false,
+      "score": 0
     },
     {
       "name": "ООО Аэроплан",
       "id": 12,
-      "often": true
+      "rated": false,
+      "score": 0
     },
     {
       "name": "Авивкурьер, транспортное агенство",
       "id": 13,
-      "often": true
+      "rated": false,
+      "score": 0
     },
     {
       "name": "Виртранс, транспортная компания",
       "id": 14,
-      "often": true
+      "rated": false,
+      "score": 0
     },
     {
       "name": "Теремок",
       "id": 15,
-      "often": false
+      "rated": false,
+      "score": 0
     },
     {
       "name": "ООО Ресурс",
       "id": 16,
-      "often": false
+      "rated": false,
+      "score": 0
     },
     {
       "name": "Экс Ситиo",
       "id": 17,
-      "often": true
+      "rated": false,
+      "score": 0
     },
     {
       "name": "Экс Ситиo",
       "id": 18,
-      "often": true
+      "rated": false,
+      "score": 0
     },
     {
       "name": "Экс Ситиo",
       "id": 19,
-      "often": true
+      "rated": false,
+      "score": 0
     },
     {
       "name": "Экс Ситиo",
       "id": 20,
-      "often": true
+      "rated": false,
+      "score": 0
     }
   ]
 }

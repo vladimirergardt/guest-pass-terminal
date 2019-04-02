@@ -7,15 +7,21 @@
         <pa-modal title="К сожалению, документ не распознался"
                   typeModal="no-success"
                   size="medium"
-                  :visible="true"> <!-- getPassStatus -->
-            <p class="pass-is-ready__text">
+                  :visible="getPassStatusIsNotReady">
+            <p class="pass-no-ready__text">
                 Проверьте, что документ расположен фотографией вниз, как на картинке
             </p>
-            <div>
-                <img style="height: 262px; margin-right: 16px" src="@/assets/images/animation/passport_anim_2.gif"/>
-                <img style="height: 262px" src="@/assets/images/animation/pass_scan.png"/>
+            <div class="pass-no-ready__imgs">
+                <img src="@/assets/images/animation/passport_anim_2.gif"/>
+                <img src="@/assets/images/animation/pass_scan.png"/>
             </div>
-            <pa-button class="document-scan__camera-btn" type="primary" size="big">Сканировать еще раз</pa-button>
+            <pa-button class="document-scan__camera-btn"
+                       type="primary"
+                       size="big"
+                       @click="scanning"
+            >
+                Сканировать еще раз
+            </pa-button>
         </pa-modal>
     </section>
 </template>
